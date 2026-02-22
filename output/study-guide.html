@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Straussian Moment &mdash; Study Guide</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fafaf8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2c2c2c;
+      color: #f0ede6;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0 0 0.3rem 0;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+    }
+
+    header .subtitle {
+      font-size: 1rem;
+      color: #b8b4a8;
+      font-style: italic;
+    }
+
+    nav {
+      background: #3a3a3a;
+      padding: 1rem 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #555;
+    }
+
+    nav a {
+      color: #d4d0c8;
+      text-decoration: none;
+      margin: 0 0.8rem;
+      font-size: 0.85rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      border-bottom-color: #c9a96e;
+    }
+
+    .intro {
+      max-width: 48rem;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .intro h2 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p, .intro li {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    section {
+      max-width: 56rem;
+      margin: 0 auto 3rem auto;
+      padding: 0 2rem;
+    }
+
+    section h1 {
+      font-size: 1.8rem;
+      color: #2c2c2c;
+      border-bottom: 2px solid #c9a96e;
+      padding-bottom: 0.4rem;
+      margin-top: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #444;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: normal;
+    }
+
+    .before-reading, .after-reading {
+      background: #fff;
+      border: 1px solid #e0ddd4;
+      border-radius: 4px;
+      padding: 1.5rem 2rem;
+      margin: 1rem 0;
+    }
+
+    .before-reading h3, .after-reading h3 {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .before-reading h4, .after-reading h4 {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+      font-style: italic;
+    }
+
+    .before-reading p, .after-reading p {
+      margin-bottom: 0.8rem;
+      text-align: justify;
+    }
+
+    .before-reading ul, .after-reading ul,
+    .before-reading ol, .after-reading ol {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+    }
+
+    .before-reading li, .after-reading li {
+      margin-bottom: 0.4rem;
+    }
+
+    blockquote {
+      margin: 1em 0;
+      padding: 0.5em 1.2em;
+      border-left: 3px solid #c9a96e;
+      background: #f9f8f4;
+      font-style: italic;
+      color: #555;
+    }
+
+    .original-text {
+      margin: 1.5rem 0;
+    }
+
+    .pdf-info {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    embed {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1em 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f5f3ee;
+      font-weight: bold;
+      color: #444;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2rem 0;
+    }
+
+    strong {
+      color: #222;
+    }
+
+    code {
+      font-family: 'Menlo', 'Courier New', monospace;
+      font-size: 0.88em;
+      background: #f4f3ef;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+      font-size: 0.85rem;
+      border-top: 1px solid #e0ddd4;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Straussian Moment</h1>
+    <div class="subtitle">Peter Thiel (2007) &mdash; Study Guide</div>
+  </header>
+
+  <nav>
+    <a href="#section-1">1. Introduction / The Question of Human Nature</a>
+        <a href="#section-2">2. John Locke: The American Compromise</a>
+        <a href="#section-3">3. Carl Schmitt: The Persistence of the Political</a>
+        <a href="#section-4">4. Leo Strauss: Proceed with Caution</a>
+        <a href="#section-5">5. Rene Girard: The End of the City of Man</a>
+  </nav>
+
+  <div class="intro">
+    <h2>How to Use This Guide</h2>
+    <p>For each section of the essay, this guide provides three parts in reading order:</p>
+    <ol>
+      <li><strong>Before You Read</strong> &mdash; Background on the thinkers and concepts you'll encounter. Read this first to orient yourself.</li>
+      <li><strong>The Text</strong> &mdash; Thiel's actual essay, displayed as the original typeset pages. Read it carefully, noting what's clear and what's confusing.</li>
+      <li><strong>After You Read</strong> &mdash; A summary, glossary of key terms, a paraphrase test, and open questions. Use these to check and deepen your understanding.</li>
+    </ol>
+    <p>Take your time with each section before moving to the next.</p>
+  </div>
+
+  
+    <section id="section-1">
+      <h1>Section 1: Introduction / The Question of Human Nature</h1>
+
+      <div class="before-reading">
+        <h2>Before You Read</h2>
+        <h3>Backgrounder</h3>
+<h4>The Enlightenment Project</h4>
+<p>The Enlightenment (roughly 18th century onward) was the broad intellectual movement that placed human reason, scientific inquiry, and individual liberty at the center of political and moral life. Its core assumptions about human nature include: (1) that people are fundamentally rational agents who respond to incentives; (2) that economic motivation is the primary driver of human behavior, making material prosperity the key to social stability; and (3) that history moves in a direction of progress, where better institutions, more commerce, and wider education will gradually pacify humanity. Under this framework, political philosophy could safely set aside questions about virtue, the soul, or the meaning of life and instead focus on institutional design, property rights, and the management of competing interests.</p>
+<h4>Athens vs. Jerusalem</h4>
+<p>Before the Enlightenment, the Western tradition drew on two deep and fundamentally incompatible sources:</p>
+<ul>
+<li>
+<p><strong>Athens (classical philosophy):</strong> Represented by thinkers like Plato, Aristotle, and later Machiavelli, this tradition emphasizes reason, civic virtue, and the life of the polis. The highest human achievement is the exercise of practical and theoretical wisdom. Political life demands courage, honor, and sometimes sacrifice; the good life is discovered through philosophy and enacted through citizenship.</p>
+</li>
+<li>
+<p><strong>Jerusalem (Christian theology):</strong> Represented by the biblical tradition and thinkers like Augustine, this stream emphasizes faith, sin, grace, and salvation. The world is fallen; human beings are marked by original sin and cannot perfect themselves through reason alone. True fulfillment lies not in political achievement but in obedience to God; earthly kingdoms are, at best, tolerable arrangements in a vale of tears.</p>
+</li>
+</ul>
+<p>The tension is structural. The citizen of Athens asks: how do I live nobly and serve the city? The Christian of Jerusalem asks: how do I live faithfully and serve God? Each regards the other's sacrifices as vain. For the citizen, Christian mortification is a waste of energy that should go toward political and military excellence. For the Christian, the citizen's worldly ambitions are dust compared to eternal salvation.</p>
+<h4>Key Thinkers Referenced</h4>
+<ul>
+<li>
+<p><strong>Voltaire / Candide:</strong> Voltaire (1694-1778) was a leading French Enlightenment writer and satirist. His novella <em>Candide</em> (1759) mocks philosophical optimism; the protagonist concludes that the wisest course is simply to "cultivate one's garden" -- a metaphor for modest, private contentment rather than grand ambitions.</p>
+</li>
+<li>
+<p><strong>Augustine (354-430):</strong> The most influential theologian in Western Christianity. His <em>City of God</em> argues that earthly political orders are deeply flawed and that true peace belongs only to the heavenly city; human beings are fallen creatures prone to sin, and political life must reckon with this darkness.</p>
+</li>
+<li>
+<p><strong>Machiavelli (1469-1527):</strong> Florentine political philosopher who broke with the classical-Christian synthesis by describing politics as it actually is rather than as it ought to be. He acknowledged human capacity for evil and argued that effective rulers must sometimes use force and deception -- a pagan realism about human danger.</p>
+</li>
+<li>
+<p><strong>Adam Smith (1723-1790):</strong> Scottish philosopher and author of <em>The Wealth of Nations</em> (1776), the founding text of classical economics. He argued that self-interested economic activity, guided by markets, produces general prosperity -- placing economic rationality at the heart of political order.</p>
+</li>
+<li>
+<p><strong>Karl Marx (1818-1883):</strong> German philosopher and author of <em>Das Kapital</em>. He agreed with Smith that economic forces drive history but argued that capitalism produces class conflict that will culminate in revolution. Despite their opposition, both Smith and Marx treat human beings as primarily economic actors.</p>
+</li>
+<li>
+<p><strong>Hegel (1770-1831):</strong> German idealist philosopher who saw history as the progressive unfolding of reason and freedom, culminating in the rational state. He synthesized elements of both Athens and Jerusalem into a theory of historical progress.</p>
+</li>
+<li>
+<p><strong>Kant (1724-1804):</strong> German philosopher who grounded morality in pure reason and envisioned perpetual peace through a federation of republican states. He represents the Enlightenment faith that rational principles can resolve political conflict without recourse to religious or traditional authority.</p>
+</li>
+<li>
+<p><strong>Hobbes (1588-1679):</strong> English philosopher and author of <em>Leviathan</em>. Thiel identifies him as "the first truly modern philosopher" because he explicitly abandoned questions of virtue and the good life in favor of a single overriding concern: the avoidance of violent death. Hobbes argued that rational self-preservation, not honor or faith, should be the basis of political order.</p>
+</li>
+<li>
+<p><strong>Pierre Manent (b. 1949):</strong> Contemporary French political philosopher. His book <em>The City of Man</em> traces how the mutual exhaustion of the classical and Christian traditions gave rise to the modern individual -- someone who defines himself by rejecting all forms of sacrifice.</p>
+</li>
+</ul>
+<h4>The Early Modern Crisis</h4>
+<p>The tension between Athens and Jerusalem did not remain theoretical. In the 16th and 17th centuries, the Reformation shattered the institutional unity of Western Christianity. Martin Luther's challenge to the Catholic Church produced not peaceful reform but escalating violence, as Protestants and Catholics each tried to impose their vision of the true faith by force. The Counter-Reformation intensified the conflict. This escalation culminated in the <strong>Thirty Years' War (1618-1648)</strong>, fought primarily across the German lands, which by some estimates killed over half the population of Germany. It was one of the most devastating conflicts in European history.</p>
+<p>The <strong>Peace of Westphalia (1648)</strong> ended the war by effectively agreeing to disagree: each sovereign would determine the religion of his own territory. This settlement is the founding moment of the modern state system. Its deeper consequence was that questions of virtue, the good life, and true religion were gradually pushed out of public life and into the private sphere. Polite, respectable people learned not to discuss them, because such discussions had led to catastrophic bloodshed. This is the political origin of the Enlightenment's "strategic retreat" from questions of human nature.</p>
+<h4>How This Sets Up the Essay</h4>
+<p>Thiel's argument is that September 11, 2001 shattered the Enlightenment framework by producing an adversary it could not explain. The 9/11 attackers were not the economically desperate masses that Marxist or liberal development theory predicted would turn to violence. They were affluent, educated, religiously motivated men who sought glory and martyrdom -- precisely the kind of human motivation that modern political thought had declared irrelevant or irrational. If economic incentives cannot contain violence, and if rational deterrence does not work against suicidal actors, then the Enlightenment's bargain -- safety in exchange for not asking dangerous questions about human nature -- has broken down. The rest of the essay asks what happens when those suppressed questions return, examining the problem through four thinkers: Locke, Schmitt, Strauss, and Girard.</p>
+      </div>
+
+      <div class="original-text">
+        <h2>The Text</h2>
+        <p class="pdf-info">Pages 1&ndash;6 of the original document (6 pages)</p>
+        <embed src="sections/section-1.pdf#toolbar=0&view=FitH" type="application/pdf"
+               width="100%" height="900px">
+      </div>
+
+      <div class="after-reading">
+        <h2>After You Read</h2>
+        <h3>Summary</h3>
+<p>Thiel argues that the September 11 attacks exposed a fundamental failure in modern Western political thought. The Enlightenment had deliberately abandoned questions about human nature, virtue, and religion -- questions that once animated both classical philosophy and Christian theology -- because debating them had led to catastrophic violence (above all the Thirty Years' War). In their place, modernity substituted a framework built on economic rationality, material incentives, and institutional design. But the 9/11 attackers -- wealthy, educated, religiously motivated -- could not be explained or deterred by this framework. Their existence demonstrates that not all human beings are <em>homo economicus</em>, and that the political thought stretching from Smith through Marx to Kant and Hegel requires fundamental reexamination.</p>
+<h3>Key Terms</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>How the author uses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>homo economicus</em></td>
+<td>The model of human beings as fundamentally rational, self-interested economic actors who respond predictably to material incentives.</td>
+<td>Thiel argues this model is the shared assumption of both left and right in modern politics (Smith and Marx alike), and that 9/11 proved it incomplete: the attackers were wealthy and educated, motivated by religious glory rather than economic grievance.</td>
+</tr>
+<tr>
+<td>Athens and Jerusalem</td>
+<td>Shorthand for the two pre-modern Western traditions: classical Greek philosophy (reason, civic virtue, the polis) and biblical/Christian theology (faith, sin, salvation).</td>
+<td>Thiel follows Manent in arguing that these two traditions, though fundamentally incompatible, jointly sustained a richer account of human nature. Their mutual exhaustion through centuries of conflict gave rise to the modern individual and the Enlightenment retreat from questions of virtue.</td>
+</tr>
+<tr>
+<td>The modern individual</td>
+<td>In Manent's formulation, the person who defines him- or herself by rejecting all forms of sacrifice -- the product of the mutual discrediting of both Athens and Jerusalem.</td>
+<td>Thiel uses this concept to explain why modernity lacks the intellectual resources to comprehend actors who embrace sacrifice and martyrdom. The modern individual, having rejected the frameworks that made sense of such commitments, literally cannot account for them.</td>
+</tr>
+<tr>
+<td>The Enlightenment's "strategic retreat"</td>
+<td>The deliberate decision by Enlightenment thinkers to abandon questions about human nature, virtue, and the good life because debating them had proved too dangerous and deadly.</td>
+<td>Thiel treats this retreat not as intellectual progress but as a pragmatic bargain: safety was purchased at the cost of understanding. September 11 revealed the price of that bargain -- a civilization unable to comprehend or counter adversaries motivated by pre-modern commitments.</td>
+</tr>
+<tr>
+<td>The Peace of Westphalia</td>
+<td>The 1648 treaties that ended the Thirty Years' War by establishing the principle that each sovereign determines the religion of his own territory, effectively removing religious questions from interstate politics.</td>
+<td>Thiel identifies 1648 as "the single year that dates the birth of the modern era," the moment when the West formalized its decision to treat questions of virtue and religion as private matters. This is the institutional origin of the Enlightenment project.</td>
+</tr>
+<tr>
+<td><em>ex ante</em> / <em>ex post</em></td>
+<td>Latin terms meaning "before the fact" and "after the fact," used to distinguish between how reasonable a decision appeared at the time versus how it looks in retrospect.</td>
+<td>Thiel concedes that wealth transfers to the developing world made sense <em>ex ante</em> (preventing communist revolution seemed urgent in the late 1940s), but argues they look naive <em>ex post</em> -- the actual threat came not from the economically desperate but from the affluent and religiously motivated.</td>
+</tr>
+<tr>
+<td><em>Dulce et decorum est pro patria mori</em></td>
+<td>Latin phrase from Horace meaning "It is sweet and fitting to die for one's country." Wilfred Owen later called it "the old lie" in his World War I poem.</td>
+<td>Thiel uses the phrase to mark the transition from the older tradition (which honored sacrificial death for city or faith) to modernity (which regards such death as meaningless). Hobbes's boast of deserting a religious war epitomizes the modern reversal: a cowardly life became preferable to a heroic but purposeless death.</td>
+</tr>
+<tr>
+<td>The wealth transfer consensus</td>
+<td>The post-WWII policy of channeling hundreds of billions of dollars from developed to developing nations through institutions like the World Bank and IMF, on the theory that economic development would prevent revolutionary violence.</td>
+<td>Thiel argues this consensus rested on the <em>homo economicus</em> assumption -- that poverty causes violence and prosperity prevents it. The 9/11 attackers' affluence refuted the theory at its root: violence can spring from religious and ideological motives that no amount of economic development addresses.</td>
+</tr>
+</tbody>
+</table>
+<h3>Paraphrase Test</h3>
+<p><strong>Try this:</strong> Restate the argument of this section in 3-4 sentences of your own. Then compare with the summary above -- what did you capture? What did you miss?</p>
+<h3>Open Questions</h3>
+<ul>
+<li>Is Thiel right that 9/11 fundamentally challenged modern political thought, or is he overstating the case? Could the Enlightenment framework accommodate religiously motivated terrorism as an anomaly rather than a refutation?</li>
+<li>What exactly does the "older tradition" offer that modernity abandoned -- and can it be recovered without also recovering the violence (Reformation wars, inquisitions) that accompanied it?</li>
+<li>How will each of the four thinkers Thiel examines next (Locke, Schmitt, Strauss, Girard) respond to this problem? What does it mean that he has chosen two liberals and two anti-liberals?</li>
+<li>Why does Thiel choose the bin Laden example specifically -- what argumentative work does it do? Is the comparison to the Rockefellers rhetorical provocation or a genuine analytical point?</li>
+<li>Thiel frames the Enlightenment retreat as a response to the Thirty Years' War, but is this historically accurate or a simplification? Did Hobbes, Locke, and others really abandon questions of human nature, or did they reformulate them?</li>
+<li>The section implies that technology (which enables small groups to inflict mass casualties) has changed the political calculus permanently. How does this technological claim interact with the philosophical argument about human nature? Are these two separate problems or one?</li>
+</ul>
+<hr />
+      </div>
+    </section>
+    <section id="section-2">
+      <h1>Section 2: John Locke: The American Compromise</h1>
+
+      <div class="before-reading">
+        <h2>Before You Read</h2>
+        <h2>Backgrounder</h2>
+<h3>John Locke (1632-1704)</h3>
+<p>John Locke was an English philosopher and physician, widely regarded as the father of classical liberalism. His political and epistemological writings laid the intellectual foundations for both the American and French revolutions and for the modern liberal democratic tradition more broadly.</p>
+<p>Three of Locke's works are central to this section:</p>
+<ul>
+<li>
+<p><strong>Two Treatises of Government (1689):</strong> Locke's primary political work, which argues that legitimate government rests on the consent of the governed, that individuals possess natural rights to life, liberty, and property, and that political authority derives from a social contract. The Second Treatise develops his theory of property, arguing that labor is the source of value and that individuals create property by mixing their labor with the raw materials of nature. It is from this text that Thiel draws Locke's claims about self-preservation as the fundamental human desire, the "ill condition" of the state of nature, and the labor theory of value.</p>
+</li>
+<li>
+<p><strong>An Essay Concerning Human Understanding (1689):</strong> Locke's major epistemological work, which argues that human knowledge is limited to what we can derive from sensory experience. The mind at birth is a <em>tabula rasa</em> (blank slate); there are no innate ideas. Crucially for Thiel's argument, Locke contends that we can know only the "secondary qualities" of things -- their observable effects and powers -- not their underlying substances or essences. This epistemological claim becomes, in Thiel's reading, a deliberate demolition of the Aristotelian and Thomistic tradition that grounded political and moral life in claims about human nature.</p>
+</li>
+<li>
+<p><strong>The Reasonableness of Christianity (1695):</strong> A theological work in which Locke argues that Christianity, properly understood, is compatible with reason. Thiel reads this text as an exercise in esoteric writing: Locke ostensibly defends Christianity against atheism, but in the process he redefines Christian teachings so thoroughly -- emphasizing self-preservation over love of God, loosening the obligations of marriage and filial piety, legitimating the accumulation of wealth -- that the Christianity that emerges is virtually indistinguishable from secular liberalism.</p>
+</li>
+</ul>
+<h3>The American Founding and Locke</h3>
+<p>The connection between Locke and the American founding is one of the most extensively debated topics in American intellectual history. The Declaration of Independence (1776) echoes Lockean language directly: "life, liberty, and the pursuit of happiness" parallels Locke's "life, liberty, and property" (the substitution of "happiness" for "property" is itself significant). The Constitution's framework of limited government, separation of powers, and protection of individual rights reflects Lockean principles about the purpose and constraints of political authority.</p>
+<p>Thiel goes further than most historians, calling Locke the "definitive founder" of the United States -- not merely an influence on the founders but the architect of the conceptual framework within which America was conceived. This is a deliberately provocative claim. It means that America is, at its core, a Lockean experiment: a nation built on the premise that questions about human nature and the good life should be set aside in favor of individual rights, commerce, and the protection of property. The success of that experiment, Thiel suggests, is precisely what made Americans forget the radicalism of the original premise.</p>
+<h3>Hobbes vs. Locke</h3>
+<p>Thomas Hobbes (1588-1679) and John Locke are often paired as the two foundational thinkers of modern liberal political philosophy, though they differ on crucial points:</p>
+<ul>
+<li>
+<p><strong>What they share:</strong> Both reject the older Aristotelian-Thomistic tradition that grounded politics in claims about human nature, virtue, and the good life. Both begin from a hypothetical "state of nature" and argue that rational self-interest drives individuals to form political societies. Both treat self-preservation rather than virtue as the fundamental political concern.</p>
+</li>
+<li>
+<p><strong>Where they differ:</strong> For Hobbes, the state of nature is a "war of all against all," and the only escape is to surrender nearly all individual freedom to an absolute sovereign (Leviathan). For Locke, the state of nature is less dire -- individuals possess natural rights even before government exists -- and the social contract preserves rather than eliminates those rights. Government exists to protect pre-existing rights, not to create order from chaos.</p>
+</li>
+</ul>
+<p>In this section, Thiel treats them as part of the same project. Hobbes reduces all human motivation to the desire for power; Locke elaborates this reduction by stripping human attributes of anything specifically human -- will, liberty, and understanding become mere "powers," and the underlying substance that possesses them becomes unknowable. The difference is one of temperament and strategy, not of fundamental direction: Hobbes is blunt, Locke is cautious, but both are dismantling the older tradition's claims about what human beings are.</p>
+<h3>Key Concepts</h3>
+<ul>
+<li>
+<p><strong>State of nature:</strong> A hypothetical condition of human life before the establishment of government or political society. Both Hobbes and Locke use it as a thought experiment to justify the social contract, but they describe it very differently. Thiel emphasizes Locke's characterization of it as an "ill condition" where people are "needy and wretched" -- a description that serves the argumentative purpose of making the state of nature worthless, so that nearly all value can be attributed to human labor rather than to natural endowment.</p>
+</li>
+<li>
+<p><strong>Social contract:</strong> The theoretical agreement by which individuals consent to form a political society and accept certain constraints on their freedom in exchange for the protection of their remaining rights. In Locke's version, the contract is limited: government exists to protect life, liberty, and property, and citizens retain the right to revolt if government exceeds its mandate.</p>
+</li>
+<li>
+<p><strong>Natural rights:</strong> Rights that individuals possess by virtue of their humanity, prior to and independent of any government. In Locke's framework, these include the right to life, liberty, and property. Thiel argues that Locke derives these rights not from a positive account of human nature (as in the Aristotelian tradition) but from the <em>impossibility</em> of knowing human nature -- a crucial distinction.</p>
+</li>
+<li>
+<p><strong>Property rights and the labor theory of value:</strong> Locke argues that individuals create property by mixing their labor with natural resources. Since "labor makes the far greatest part of the value of things we enjoy in this world," the original state of nature contributes very little. This claim has a political function beyond economics: if nature is nearly worthless, then questions about the justice of original appropriation become unimportant, and the focus can shift to protecting property rights going forward.</p>
+</li>
+<li>
+<p><strong>The unknowable "X":</strong> Thiel's term (drawing on Locke's epistemology) for the radical agnosticism about human nature that undergirds the Lockean-American political framework. Since we cannot know the true substance or essence of human beings -- only their observable "powers" and effects -- we have no basis for telling people what they should want or how they should live. This unknowability becomes the philosophical foundation for liberal rights: freedom of religion, speech, property, and commerce all follow from the premise that no one is in an authoritative position to challenge another person's desires.</p>
+</li>
+</ul>
+<h3>Connection to Section 1</h3>
+<p>Section 1 established the problem: the Enlightenment deliberately abandoned questions about human nature after the devastation of the religious wars, substituting economic rationality and institutional design. The 9/11 attacks exposed the limits of this substitution by producing adversaries -- wealthy, educated, religiously motivated -- whom the framework could not explain or deter.</p>
+<p>Section 2 is the first of four thinker-specific examinations that structure the rest of the essay. Locke represents the Enlightenment's positive answer to the crisis described in Section 1: here is how the West actually built its post-religious-war order, and here is what that order looks like when examined closely. Thiel's treatment of Locke is not a simple rejection; he presents Locke's achievement as genuinely impressive and historically consequential. But he also exposes its internal limitations -- the "boundary cases" that the Lockean framework defers or dismisses -- and argues that 9/11 and the oil economy represent precisely the kind of cases that cannot be deferred any longer. The section thus functions as both an appreciation and a critique: Locke solved the problem of religious war within the West, but his solution depended on assumptions (that nature is nearly valueless, that all people will eventually become homo economicus, that the non-Western world can be ignored) that have now broken down.</p>
+<hr />
+      </div>
+
+      <div class="original-text">
+        <h2>The Text</h2>
+        <p class="pdf-info">Pages 6&ndash;11 of the original document (6 pages)</p>
+        <embed src="sections/section-2.pdf#toolbar=0&view=FitH" type="application/pdf"
+               width="100%" height="900px">
+      </div>
+
+      <div class="after-reading">
+        <h2>After You Read</h2>
+        <h2>Summary</h2>
+<p>Thiel argues that John Locke constructed the intellectual framework for American liberal democracy by pursuing a deliberate rhetorical strategy: rather than openly attacking Christianity or the older philosophical tradition, Locke quietly redefined their core concepts until they became compatible with -- and ultimately indistinguishable from -- secular capitalism. At the epistemological level, Locke replaced the Aristotelian claim that we can know human nature with the claim that human nature is unknowable (the "X"), and from this agnosticism he paradoxically derived the strong liberal rights to religion, speech, and property. This framework proved enormously successful: the United States became the world's dominant power, and its citizens forgot how radical and strange the founding premises were. But the framework depended on deferring certain "boundary cases" -- questions about the justice of original property acquisition, about people who do not behave as rational economic actors, and about the non-Western world where the Enlightenment's bargain never took hold. September 11 forced these deferred questions back into view, as bin Laden's religiously motivated violence, funded by oil wealth that refutes Locke's labor theory of value, demonstrated that the Lockean compromise cannot account for a world where not everyone has accepted its terms.</p>
+<hr />
+<h2>Key Terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>How the author uses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The unknowable "X"</td>
+<td>Locke's epistemological conclusion that the true substance or essence of human beings cannot be known -- we can observe only their "powers" and secondary effects, never their underlying nature.</td>
+<td>Thiel argues that this agnosticism, far from being a modest philosophical concession, is the foundational move of the entire American political order. Because no one can claim authoritative knowledge of what humans are, no one can legitimately tell others what to want, believe, or do. Liberal rights (religion, speech, property) are derived not from a positive account of human dignity but from the impossibility of such an account. The "X" is the "low but solid ground" on which the American founding takes place.</td>
+</tr>
+<tr>
+<td>Esoteric writing (as applied to Locke)</td>
+<td>The practice of concealing one's true meaning beneath an outward show of orthodoxy -- writing for two audiences simultaneously, with the surface meaning reassuring conventional readers while the deeper meaning is legible only to careful, philosophically initiated readers.</td>
+<td>Thiel reads Locke as a master of esoteric writing. In <em>The Reasonableness of Christianity</em>, Locke ostensibly defends Christianity against atheism, but his "defense" systematically redefines Christian teachings until they support self-preservation, property rights, and wealth accumulation. Thiel draws an explicit parallel between Locke's strategy and the strategy Locke attributes to Christ himself: both conceal their true message to avoid persecution and to achieve their goals gradually. The implication is that Locke was far more radical than he appeared, and that the gradual secularization of America was not an unintended drift but was built into the original design.</td>
+</tr>
+<tr>
+<td>The state of nature</td>
+<td>A hypothetical pre-political condition in which human beings live without government, laws, or organized society. In the older natural-law tradition, nature was understood as ordered, purposeful, and valuable; in Locke's version, it is an "ill condition" of neediness and wretchedness.</td>
+<td>Thiel emphasizes Locke's demotion of the state of nature as performing crucial argumentative work: if the state of nature is nearly worthless, then almost all value must come from human labor and intellect, which justifies strong property rights and makes questions about the justice of original appropriation ("how did you get this land in the first place?") largely irrelevant. This move also sets up Thiel's later critique via the oil industry, where enormous value exists "simply in nature," contradicting Locke's premise.</td>
+</tr>
+<tr>
+<td>Boundary cases</td>
+<td>Situations or categories of persons that fall outside the neat logic of a theoretical framework and expose its limitations -- the hard exceptions that a system must either resolve or defer. In Locke's framework, these include: the rights of children, criminals, and the insane; the limits of commodification; the justice of original property acquisition; and the existence of people who are not rational economic actors.</td>
+<td>Thiel argues that Locke's strategy was to acknowledge these cases but defer them as exceptional, trusting that the general principle of expanding liberty would handle them over time. The section's climax is the argument that September 11 represents a boundary case that can no longer be deferred: bin Laden is a wealthy, powerful man motivated by religious conviction rather than economic rationality, funded by oil wealth that contradicts the labor theory of value. The "boundaries" Locke dismissed have become the central problem.</td>
+</tr>
+<tr>
+<td>The Lockean/American compromise</td>
+<td>The implicit bargain at the heart of American liberal democracy: dangerous questions about human nature, religion, virtue, and the good life are set aside in exchange for individual rights, commercial prosperity, and civil peace. The compromise works by treating these questions as unanswerable (the "X") rather than answering them incorrectly.</td>
+<td>Thiel presents this compromise as genuinely successful for over two centuries -- it avoided the catastrophic anti-religious violence of the French and Russian revolutions while still achieving thoroughgoing secularization. But the compromise was always conditional on certain assumptions: that nature is nearly valueless (so property questions can be forward-looking), that all people will eventually adopt economic rationality, and that the non-Western world can be left out of the picture. September 11 broke these conditions.</td>
+</tr>
+<tr>
+<td>The oil exception</td>
+<td>The fact that petroleum wealth represents a massive counter-example to Locke's labor theory of value: most of the value of oil exists "simply in nature," with human labor adding only a proportionately small amount through extraction and refining.</td>
+<td>Thiel uses the oil industry as a concrete demonstration that Locke's framework breaks down precisely where it matters most. If value comes primarily from labor, then unjust original acquisition fades into insignificance as new, legitimately earned wealth dwarfs it. But oil reverses this logic: its value is overwhelmingly natural, its appropriation was largely a story of "crime on a scale so grand," and the fortunes it built (including bin Laden's) represent exactly the kind of concentrated, unjustly acquired power that Locke's theory dismisses. The oil exception is not peripheral; it is the material foundation of the geopolitical crisis Thiel is analyzing.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Paraphrase Test</h2>
+<p><strong>Try this:</strong> Restate the argument of this section in 3-4 sentences of your own. Then compare with the summary above -- what did you capture? What did you miss?</p>
+<p>Key points to check your paraphrase against:</p>
+<ul>
+<li>Did you capture Locke's <em>method</em> -- the esoteric, gradualist strategy of redefining tradition from within rather than attacking it openly?</li>
+<li>Did you capture the philosophical core -- the move from "human nature is knowable" to "human nature is unknowable," and the derivation of liberal rights from that agnosticism?</li>
+<li>Did you capture the relationship between the labor theory of value and the dismissal of boundary cases about original property acquisition?</li>
+<li>Did you capture the turn at the end of the section -- the argument that September 11 and the oil economy represent boundary cases that can no longer be deferred?</li>
+<li>Did you capture the irony Thiel identifies: that America's gradual secularization was not a betrayal of its founding but a fulfillment of it?</li>
+</ul>
+<hr />
+<h2>Open Questions</h2>
+<ul>
+<li>
+<p><strong>Is Thiel's reading of Locke as an esoteric writer historically defensible, or is it an imposition of Leo Strauss's hermeneutic method onto a thinker who may have been more straightforwardly sincere?</strong> Thiel presents Locke's apparent defense of Christianity as a deliberate disguise for a secularizing agenda, but many historians of philosophy read Locke as a genuinely devout (if heterodox) Christian. This question becomes especially important because Thiel's entire argument about the "original conception" of American secularization depends on it. If Locke was sincere, then America's drift from Christianity really is a drift, not a design -- and the conservative moralists Thiel gently mocks may have a point.</p>
+</li>
+<li>
+<p><strong>Does the "unknowable X" argument actually work as a foundation for liberal rights, or does it prove too much?</strong> Thiel presents it as a "low but solid ground," but one might object that genuine agnosticism about human nature could equally justify authoritarianism (if we do not know what humans are, perhaps we should err on the side of control rather than freedom) or nihilism (if we cannot know human nature, perhaps rights are just conventions with no philosophical grounding at all). Thiel seems aware of this problem -- he calls the ground "low" -- but does not fully address it.</p>
+</li>
+<li>
+<p><strong>How much weight can the oil exception bear?</strong> Thiel treats the oil industry as a decisive refutation of Locke's labor theory of value, but one could argue that oil is an anomaly rather than a paradigm -- that in the vast majority of cases, human labor and intellect really do account for most value creation. If the oil exception is just one industry among many, does it really undermine the Lockean framework, or is it simply a hard case that the framework handles imperfectly?</p>
+</li>
+<li>
+<p><strong>What does Thiel mean by calling the Enlightenment a "period of intellectual slumber and amnesia"?</strong> The final sentence of the section is one of its most striking: Thiel describes the entire Enlightenment as "misleadingly called" -- implying that what presented itself as an awakening of reason was actually a forgetting of important truths. But what truths, specifically? The older tradition's claims about human nature? The reality of religious motivation? The danger of boundary cases? This question connects to the essay's larger trajectory: Thiel is building toward alternative frameworks (Schmitt, Strauss, Girard) that recover what the Enlightenment suppressed.</p>
+</li>
+<li>
+<p><strong>Is Thiel conflating Locke's philosophical project with America's actual historical development?</strong> The section moves seamlessly from Locke's texts to American political culture to the 1990s to September 11, as if these were all one continuous Lockean experiment. But American history involved many thinkers, traditions, and contingencies beyond Locke -- republican virtue theory, Puritan theology, Jeffersonian agrarianism, the Civil War, the Progressive Era, and so on. Does treating America as simply "the country founded by Locke" flatten a more complex intellectual history? This simplification may be deliberate (Thiel is writing an essay, not a monograph), but it is worth flagging as an assumption that shapes the entire argument.</p>
+</li>
+<li>
+<p><strong>What is the status of the Keynes allusion in the final paragraphs?</strong> When Thiel writes "none of this will matter if we are all dead in the short run," he is inverting Keynes's famous remark that "in the long run we are all dead." Keynes used the phrase to argue against excessive faith in long-run economic equilibrium; Thiel repurposes it to argue against excessive faith in the long-run triumph of liberal capitalism over religious fanaticism. The allusion is worth tracking because it suggests Thiel sees the problem as one of temporal horizons: Locke's framework may be correct in the long run but fatally inadequate in the short run, which is the only run that matters if existential threats are at stake.</p>
+</li>
+</ul>
+      </div>
+    </section>
+    <section id="section-3">
+      <h1>Section 3: Carl Schmitt: The Persistence of the Political</h1>
+
+      <div class="before-reading">
+        <h2>Before You Read</h2>
+        <h2>Backgrounder</h2>
+<h4>Carl Schmitt (1888-1985)</h4>
+<p>Carl Schmitt was a German jurist, legal theorist, and political philosopher whose work remains among the most controversial and influential in 20th-century political thought. He wrote prolifically during the Weimar Republic and into the Nazi period. In 1933 he joined the Nazi party and served as "Crown Jurist of the Third Reich," providing legal justification for Hitler's emergency powers and the purge of Jewish jurists from the German bar. After the war he was interned by the Allies, interrogated at Nuremberg (though never indicted), and permanently excluded from academic life in Germany. He never publicly recanted or apologized.</p>
+<p>Despite this biography -- or in some readings because of it -- Schmitt has exerted enormous influence across the political spectrum. His analysis of sovereignty, emergency powers, and the limits of liberalism has been taken up by the political left (Giorgio Agamben, Chantal Mouffe), the political right (various authoritarian and populist movements), and by scholars who find his diagnostic power indispensable even as they reject his prescriptions. His appeal lies in his willingness to name what liberalism prefers to leave unnamed: that political order ultimately rests on decisions about who belongs and who does not, decisions that cannot be reduced to legal procedure or economic calculation.</p>
+<h4>Key Works</h4>
+<ul>
+<li>
+<p><strong>The Concept of the Political (1932):</strong> Schmitt's most famous work, in which he argues that the specific criterion of the political is the distinction between friend and enemy. Politics is not defined by any particular subject matter (economics, morality, aesthetics) but by the intensity of association and dissociation -- the point at which a group of people identifies another group as an existential threat. Every other human endeavor (trade, art, debate) can become political the moment it reaches this threshold of intensity.</p>
+</li>
+<li>
+<p><strong>Political Theology (1922):</strong> Opens with the famous declaration: "Sovereign is he who decides on the exception." Schmitt argues that all significant concepts of the modern theory of the state are secularized theological concepts -- sovereignty corresponds to God's omnipotence, the state of exception to the miracle, and so on. Legal order presupposes a normal situation, but who decides whether the situation is normal? That decision, which cannot itself be grounded in law, is the sovereign act.</p>
+</li>
+</ul>
+<h4>The Friend/Enemy Distinction</h4>
+<p>This is Schmitt's core idea. The political is not a domain alongside economics, morality, and aesthetics; it is the degree of intensity that transforms any domain into a matter of existential commitment. When a conflict reaches the point at which a group perceives another group as a fundamental threat to its way of life -- not merely as a competitor, a debating opponent, or a commercial rival -- the conflict has become political in Schmitt's sense. The enemy is not personally hated; the enemy is the public other whose existence poses a question that cannot be resolved by negotiation, bribery, or procedural compromise.</p>
+<p>Crucially, for Schmitt, you cannot abolish this distinction. You can only pretend it does not exist, and in doing so you leave yourself defenseless against those who still recognize it.</p>
+<h4>Political Theology</h4>
+<p>Schmitt's concept of political theology operates on two levels. First, structurally: modern political concepts (sovereignty, the state of exception, constitutional order) are secularized versions of theological concepts and carry their logic forward even when their religious content has been emptied out. Second, substantively: Schmitt was a committed Catholic who believed that genuine political seriousness requires a metaphysical horizon. Without the eschatological framework of salvation and damnation, politics degenerates into mere administration -- comfortable, empty, and ultimately indefensible. In Thiel's presentation of Schmitt, this theological dimension is essential: the friend/enemy distinction is not merely a sociological observation but a "pale reflection" of the ultimate division between those who follow Christ and those who do not.</p>
+<h4>Alexandre Kojeve (1902-1968)</h4>
+<p>Alexandre Kojeve was a Russian-born, Paris-based philosopher who delivered an enormously influential series of lectures on Hegel's <em>Phenomenology of Spirit</em> from 1933 to 1939. His central claim was that history, understood as the struggle for recognition between human beings, had effectively ended. The principles of the French Revolution -- liberty, equality, universal recognition -- had triumphed in principle; what remained was merely the working out of their institutional consequences. At the end of history, humanity would have nothing left to fight about. Kojeve took this conclusion to disturbing extremes: post-historical "man" would cease to be human in any meaningful sense, becoming instead an animal of the species <em>Homo sapiens</em> engaged in sophisticated but purposeless activity -- art, play, eroticism -- without genuine struggle or risk. Francis Fukuyama later popularized (and softened) this thesis in <em>The End of History and the Last Man</em> (1992).</p>
+<p>Thiel invokes Kojeve here because Schmitt's nightmare scenario -- a world that has abandoned all hard questions -- is precisely what Kojeve describes as the inevitable destination of history. The two thinkers agree on the diagnosis (depoliticization leads to the disappearance of genuine humanity) but disagree on the evaluation: Kojeve accepts it with ironic resignation, while Schmitt regards it with apocalyptic horror.</p>
+<h4>How This Connects to Sections 1-2</h4>
+<p>Schmitt is the anti-Locke. Where Section 2 showed Locke's strategy of replacing hard questions about human nature with an unknowable "X" and building a tolerant commercial order on that agnosticism, Section 3 presents the thinker who says that strategy is a fatal self-deception. Locke says: we cannot know the answers to questions about human nature, so let us build a politics that does not require answers. Schmitt says: precisely because we cannot agree on the answers, we will inevitably divide into groups that fight over them -- and the group that pretends otherwise will lose.</p>
+<p>Section 1 established that the Enlightenment abandoned questions of human nature after the violence of the Reformation. Section 2 showed how Locke's framework operationalized that abandonment into a functioning political order. Section 3 now asks: what happens when someone refuses to play along? Schmitt's answer is that the political -- the irreducible division of humanity into friends and enemies -- never disappears; it only goes underground, and those who forget this are conquered by those who remember.</p>
+<p>This sets up the essay's central dilemma. If Locke is right, the West can survive by expanding its commercial tolerance to encompass all of humanity. If Schmitt is right, that tolerance is a luxury that survives only so long as it is protected by people willing to fight and die for it -- people whom the tolerant order itself cannot produce.</p>
+<hr />
+<h1></h1>
+      </div>
+
+      <div class="original-text">
+        <h2>The Text</h2>
+        <p class="pdf-info">Pages 11&ndash;15 of the original document (5 pages)</p>
+        <embed src="sections/section-3.pdf#toolbar=0&view=FitH" type="application/pdf"
+               width="100%" height="900px">
+      </div>
+
+      <div class="after-reading">
+        <h2>After You Read</h2>
+        <h2>Summary</h2>
+<p>Thiel presents Carl Schmitt as the radical alternative to Locke and the Enlightenment: where Locke built a political order by setting aside questions of human nature, Schmitt insists that such questions permanently divide humanity into friends and enemies and that no one can opt out of this division unilaterally. Those who try -- pacifists, depoliticized commercial societies -- do not escape conflict; they merely disarm themselves and, by default, aid the enemy. Applied to the post-9/11 confrontation between the West and Islam, Schmitt's framework captures the "essential strangeness" of the situation: one side treats the struggle as more important than life and death, while the other is confused about what it is fighting for. But Thiel identifies a trap at the heart of Schmitt's logic. If the West re-politicizes and adopts a crusading posture to match its adversary, it destroys the liberal identity that makes the West the West; if it refuses to fight, it will be defeated. The section closes with the alternative possibility that the political itself might vanish entirely -- Kojeve's end of history -- which Schmitt interprets through Christian eschatology as the reign of the Antichrist, a "religion of technicity" in which humanity trades its soul for comfort and entertainment.</p>
+<hr />
+<h3>Key Terms</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>How the author uses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The friend/enemy distinction</td>
+<td>Schmitt's thesis that the defining criterion of politics is the ability to distinguish between friends (those with whom one shares a common form of life) and enemies (those whose existence poses an existential challenge to that form of life). The distinction is public, not personal; one need not hate the enemy privately.</td>
+<td>Thiel uses this as the structural opposite of Locke's tolerant agnosticism. The friend/enemy distinction explains why the West-Islam confrontation cannot be managed through negotiation or economic incentive alone: one side has identified an enemy, and the other refuses to recognize that the category applies.</td>
+</tr>
+<tr>
+<td>The political</td>
+<td>For Schmitt, "the political" is not a sphere of activity (like economics or art) but the degree of intensity at which any human grouping divides into friends and enemies willing to kill and die. It is the existential seriousness underlying all politics.</td>
+<td>Thiel frames the entire section around whether "the political" can be permanently escaped or merely suppressed. He argues that Schmitt's "persistence of the political" is the central challenge to liberal modernity: if the political always returns, then Locke's bargain -- peace through depoliticization -- is a temporary reprieve, not a permanent solution.</td>
+</tr>
+<tr>
+<td>Political theology</td>
+<td>Schmitt's thesis that modern political concepts are secularized theological concepts and that genuine political order requires a metaphysical horizon (an account of ultimate meaning).</td>
+<td>Thiel shows Schmitt connecting the political and the religious: the friend/enemy distinction is a "pale reflection" of the eschatological choice to follow or reject Christ. This connection explains why Schmitt lists "pacifists" and "cremationists" together -- both reject a decision (political or religious) that Schmitt regards as inescapable.</td>
+</tr>
+<tr>
+<td>The katechon</td>
+<td>In Christian eschatology (from 2 Thessalonians 2:6-7), the katechon is the force that "restrains" or "holds back" the coming of the Antichrist. Schmitt adopted this concept to describe any political order that preserves meaningful human existence by maintaining the friend/enemy distinction and preventing the collapse into depoliticized uniformity.</td>
+<td>Though Thiel does not use the term explicitly, the concept operates throughout: the fear that the West will lose the capacity to recognize enemies -- and thereby lose its soul -- is the katechontic anxiety. Schmitt's entire argument is that the political <em>is</em> the katechon; if it disappears, the Antichrist (comfortable nihilism) takes over.</td>
+</tr>
+<tr>
+<td>The Antichrist / religion of technicity</td>
+<td>In Schmitt's political-theological framework, the Antichrist is not a demonic figure but a seductive one: he conquers the world by offering "peace and security," making people forget they have souls. The "religion of technicity" is the faith in unlimited technological mastery over nature that replaces genuine religion and genuine politics.</td>
+<td>Thiel uses Schmitt's Antichrist as the endpoint of depoliticization: a world of pure comfort, entertainment, and administration -- "The Matrix for those who choose not to take their red pills." This is Schmitt's version of Kojeve's end of history, recast in apocalyptic language. It represents the worst-case scenario for both Schmitt and (implicitly) Thiel: not violent defeat, but the quiet surrender of everything that makes human life meaningful.</td>
+</tr>
+<tr>
+<td>The Kellogg-Briand Pact (1928)</td>
+<td>A multilateral treaty in which signatory nations agreed to renounce war as an instrument of national policy. Signed by most of the world's nations, including Germany, Japan, and Italy -- all of which went to war within the following decade.</td>
+<td>Thiel (via Schmitt) cites this as the paradigmatic example of liberal self-delusion: a piece of paper that declared war illegal while doing nothing about the friend/enemy distinctions that produce wars. It epitomizes the belief that one can abolish the political by wishing it away.</td>
+</tr>
+<tr>
+<td>Pyrrhic victory</td>
+<td>A victory that comes at such devastating cost to the victor that it is equivalent to defeat. Named after King Pyrrhus of Epirus, who won battles against Rome but suffered irreplaceable losses.</td>
+<td>Thiel uses this term to crystallize the dilemma Schmitt's logic creates for the West: even if the West could revive the crusading faith of Cromwell or Pope Urban II and thereby match Islam's political-religious intensity, this would destroy the liberal, tolerant character that defines the modern West. The victory over the external enemy would come at the price of becoming the enemy.</td>
+</tr>
+<tr>
+<td>Unilateral disarmament (political sense)</td>
+<td>The decision by one side in a conflict to renounce the use of force or abandon the friend/enemy distinction, regardless of what the other side does. In Schmitt's framework, this does not produce peace but rather ensures defeat.</td>
+<td>Thiel extends the concept beyond the military domain. The West's refusal to recognize Islam as a political enemy is a form of unilateral disarmament: "if a part of the population declares that it no longer recognizes enemies, then, depending on the circumstance, it joins their side and aids them." The concept links to the broader Schmittian argument that neutrality is impossible in genuinely political conflicts.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Paraphrase Test</h3>
+<p><strong>Try this:</strong> Restate the argument of this section in 3-4 sentences of your own. Then compare with the summary above -- what did you capture? What did you miss?</p>
+<p>Things to watch for when comparing:</p>
+<ul>
+<li>Did you capture the <em>dilemma</em> (fight and lose your identity, or refuse to fight and lose the war), not just the description of Schmitt's position?</li>
+<li>Did you note that Thiel does not simply endorse Schmitt? The section presents Schmitt's framework as diagnostically powerful but prescriptively trapped -- a double bind, not a solution.</li>
+<li>Did you register the theological dimension? The connection between Schmitt's friend/enemy distinction and his eschatology (the Antichrist, the religion of technicity) is not decoration; it is the structural reason Schmitt believes depoliticization is not merely imprudent but spiritually catastrophic.</li>
+<li>Did you catch the Kojeve coda? The section does not end with the dilemma but with a third possibility -- the total disappearance of the political -- which Schmitt regards as worse than defeat. This ending pivots toward the essay's deeper question: is there a position that avoids both horns of Schmitt's dilemma?</li>
+</ul>
+<hr />
+<h3>Open Questions</h3>
+<ul>
+<li>
+<p><strong>Is Schmitt's dilemma real or a false binary?</strong> Thiel presents the West as caught between fighting (and becoming like its enemy) and not fighting (and losing). But is this actually exhaustive? Could there be forms of political seriousness that do not require adopting the enemy's worldview -- a way to recognize the friend/enemy distinction without embracing crusade?</p>
+</li>
+<li>
+<p><strong>What does "becoming like your enemy" actually mean?</strong> Thiel writes that "one must choose one's enemies well, for one will soon be just like them." How literally should we take this? Does any war against a theocratic enemy require becoming theocratic, or is the claim more limited -- that sustained existential conflict reshapes the combatant's identity in the direction of the adversary? What historical evidence supports or undermines this?</p>
+</li>
+<li>
+<p><strong>Does Schmitt's framework apply to asymmetric conflict?</strong> Schmitt's friend/enemy distinction was developed in the context of European state-on-state warfare. Does it usefully describe a conflict between a state system and a non-state network (al-Qaeda) motivated by a universalist religion? The attackers of 9/11 were not a "state" recognizing another state as an enemy; they were individuals acting within a transnational religious movement. Does this stretch or break Schmitt's categories?</p>
+</li>
+<li>
+<p><strong>Is the "end of the political" really the Antichrist, or might it be salvation?</strong> Schmitt and Kojeve agree that depoliticization means the end of genuine humanity, but why should we accept this? One could argue that a world without existential enemies -- a world of "culture, civilization, economics, morality, law, art, entertainment" -- is precisely the good life that politics was always supposed to secure. Is Schmitt's horror at this prospect a substantive insight or a temperamental preference for intensity?</p>
+</li>
+<li>
+<p><strong>How does Thiel himself evaluate Schmitt?</strong> The section presents Schmitt's diagnosis sympathetically (it "captures the essential strangeness of the unfolding confrontation") but identifies his prescription as trapped. Thiel seems to regard Schmitt as a necessary corrective to liberal complacency but not as a viable alternative. What does this tell us about where the essay is heading -- toward Strauss and Girard? What would a position that takes Schmitt's diagnosis seriously without accepting his conclusions look like?</p>
+</li>
+<li>
+<p><strong>What is the relationship between Schmitt's "religion of technicity" and Thiel's own career in technology?</strong> Thiel is a technology entrepreneur who co-founded PayPal and was an early investor in Facebook -- enterprises that arguably contribute to exactly the world of comfort and entertainment that Schmitt identifies with the Antichrist. Is Thiel aware of this tension? Does it inform the essay's refusal to fully endorse any of the four thinkers it examines?</p>
+</li>
+</ul>
+      </div>
+    </section>
+    <section id="section-4">
+      <h1>Section 4: Leo Strauss: Proceed with Caution</h1>
+
+      <div class="before-reading">
+        <h2>Before You Read</h2>
+        <h2>Backgrounder</h2>
+<h3>Leo Strauss (1899-1973)</h3>
+<p>Leo Strauss was a German-Jewish political philosopher who fled Nazi Germany and eventually settled at the University of Chicago, where he taught from 1949 to 1968. His intellectual project was a recovery of classical political philosophy (Plato, Aristotle, Xenophon, Maimonides, Al-Farabi) against what he saw as the crisis of modernity -- the collapse of the West's confidence in reason, natural right, and the possibility of genuine philosophical knowledge. Strauss argued that modern political philosophy, beginning with Machiavelli and running through Hobbes, Locke, and Nietzsche, had undergone a series of "waves" that progressively lowered the horizon of human aspiration, culminating in relativism and nihilism. His students and intellectual heirs have been controversially associated with American neoconservatism, though the fairness and accuracy of that association remains debated. What is not debated is the difficulty of his prose: Strauss wrote in a deliberately layered manner that demands extraordinary patience from readers, and he insisted that the great thinkers of the past did the same.</p>
+<h3>Esoteric vs. Exoteric Writing</h3>
+<p>This is the core Straussian hermeneutical method. Strauss argued that from antiquity through at least the early modern period, serious philosophers wrote on two levels simultaneously. The <strong>exoteric</strong> surface of their texts conformed to the prevailing orthodoxies of their societies -- religious, political, moral -- and was designed for the general public. The <strong>esoteric</strong> level, embedded "between the lines," contained the philosopher's actual views, which were often heterodox and dangerous. This double writing was not dishonesty but a rational response to the threat of persecution: Socrates was executed, and every subsequent philosopher had reason to remember that fact. The esoteric message was calibrated to be visible only to "trustworthy and intelligent readers" who would ponder the text carefully, notice deliberate contradictions, peculiar examples, and structural anomalies that the casual or hostile reader would miss.</p>
+<h3>Persecution and the Art of Writing (1952)</h3>
+<p>Strauss's key methodological work, in which he lays out the theory of esoteric writing and demonstrates it through readings of Maimonides, Halevi, Spinoza, and others. The book's central claim is that "the influence of persecution on literature is precisely that it compels all writers who hold heterodox views to develop a peculiar technique of writing." Thiel draws heavily on this text throughout Section 4, quoting Strauss's thought experiment of the historian in a totalitarian country and the famous line about the advantages of esoteric communication.</p>
+<h3>Natural Right and History (1953)</h3>
+<p>Strauss's most systematic philosophical work, which attacks modern historicism and value relativism while arguing for the recovery of classical natural right. It opens with a critique of Max Weber's fact-value distinction and proceeds through analyses of natural right in classical, medieval, and modern thought. The book's argument -- that there exists a knowable, permanent truth about human nature and the right way to live -- stands in direct opposition to the Lockean "unknowable X" described in Section 2. Thiel's claim that Strauss "believes that there exists a truth about human nature, and that this truth can in principle be known to humanity" is a compressed reference to this work.</p>
+<h3>The Katechon</h3>
+<p>A theological concept originating in 2 Thessalonians 2:6-7, where Paul refers to a mysterious force "that restraineth" (Greek: <em>to katechon</em>) the coming of the Antichrist and the end times. The concept was developed extensively in medieval political theology, where the katechon was often identified with the Roman Empire or the institutional Church -- a worldly power that holds back apocalyptic chaos. Carl Schmitt adopted the concept as a central category of his political theology: the katechon is whatever political order prevents the final dissolution of meaningful political life. Thiel applies the term to Strauss's project: Strauss aims to be the katechon -- to preserve the West by recovering knowledge of the "permanent problems" that the Enlightenment suppressed. The paradox Thiel identifies is that Strauss's very success in uncovering these problems may make it harder to maintain the political order that depends on their concealment. Thus the Straussian project "sets out to preserve the katechon, but instead becomes a 'hastener against its will.'"</p>
+<h3>Founding Violence: Romulus and Remus, Cain and Abel</h3>
+<p>The biblical and Roman founding myths converge on a disturbing pattern: the first city is founded through fratricide. In Genesis 4, Cain murders Abel and then builds the first city (Enoch). In Roman legend, Romulus kills his twin brother Remus and founds Rome. Strauss draws attention to this convergence as evidence that civilizational origins are inseparable from acts of primal violence -- a "permanent problem" that Locke's account of peaceful property acquisition through labor deliberately obscures. Thiel uses this to show that Strauss, unlike Locke, refuses to look away from the dark foundations of political order.</p>
+<h3>How This Connects to the Argument</h3>
+<p>Sections 1 through 3 established a dilemma with no apparent exit. The Enlightenment (Section 1) suppressed questions of human nature, and 9/11 demonstrated that suppression was untenable. Locke (Section 2) grounded liberal rights on the "unknowable X" of human nature, but this framework cannot handle boundary cases -- including an enemy motivated by religious certainty. Schmitt (Section 3) insists that politics (the friend-enemy distinction) is inescapable and the West must fight, but the cost of Schmittian rearmament is the West becoming indistinguishable from its enemy -- a Pyrrhic victory. Section 4 introduces Strauss as the thinker who attempts a middle path: recovering the hard truths about human nature that the Enlightenment suppressed, while avoiding Schmitt's openly violent solutions. Strauss's method is not frontal assault but esoteric discretion -- the "veil" over "sad exigencies." But Thiel ultimately judges even Strauss's path as self-undermining, because self-knowledge about the fragility of political order makes the unreflective defense of that order impossible.</p>
+<hr />
+      </div>
+
+      <div class="original-text">
+        <h2>The Text</h2>
+        <p class="pdf-info">Pages 15&ndash;21 of the original document (7 pages)</p>
+        <embed src="sections/section-4.pdf#toolbar=0&view=FitH" type="application/pdf"
+               width="100%" height="900px">
+      </div>
+
+      <div class="after-reading">
+        <h2>After You Read</h2>
+        <h2>Summary</h2>
+<p>Thiel presents Leo Strauss as attempting the central synthesis of the essay: a path between Lockean naivete (which suppresses dangerous truths about human nature) and Schmittian violence (which would destroy the liberal order in the act of defending it). Strauss's key insight is that the great philosophers of the past wrote esoterically -- encoding dangerous but genuine truths "between the lines" for careful readers only -- because certain truths about the nature of the city, the violence of its founding, and the limits of justice in wartime are too destabilizing for open discourse. Against Locke's "unknowable X," Strauss maintains that a permanent truth about human nature exists and can be known, but only through painstaking study, never through systematic summary. However, Thiel argues that the Straussian project is self-undermining: the very act of recovering awareness of the "permanent problems" -- founding violence, the necessity of espionage, the absence of fixed limits on "just reprisals" -- makes the unreflective, unselfconscious defense of liberal democracy impossible. The section concludes by gesturing toward the world of intelligence services and secret action as the practical domain where Straussian insights might be applied, but leaves unresolved whether such a path can actually sustain the liberal order or will instead accelerate its unraveling.</p>
+<hr />
+<h2>Key Terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>How the author uses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esoteric / exoteric writing</td>
+<td>The practice of writing on two levels: an exoteric surface that conforms to prevailing orthodoxies and is intended for the general public, and an esoteric message "between the lines" that conveys the author's actual, often heterodox, views to careful readers only.</td>
+<td>Thiel presents this as Strauss's fundamental method and his central discovery about the great philosophers of the past. Esoteric writing is the mechanism by which dangerous truths about human nature can be preserved across centuries without provoking the persecution of their authors. It also structures Thiel's own essay: Strauss "practices what he preaches," and Thiel is arguably doing the same.</td>
+</tr>
+<tr>
+<td>The permanent problems</td>
+<td>The enduring, irresolvable questions about political life -- the nature of the city and humanity, the violence of founding, the relation between religion and the best regime -- that every serious political thinker must confront but that the Enlightenment attempted to suppress or defer.</td>
+<td>Thiel uses this term to define what Strauss recovers from the classical tradition. Unlike Locke, who treats these questions as unanswerable and therefore dismissible, Strauss insists they are permanently present and permanently dangerous. Their recovery is both the strength and the fatal weakness of the Straussian project: knowing the problems makes unreflective political action impossible.</td>
+</tr>
+<tr>
+<td>The unknowable "X" vs. Strauss's knowable truth</td>
+<td>In Section 2, Locke replaced substantive claims about human nature with an unknowable "X" -- a deliberate agnosticism that grounds liberal rights precisely by refusing to define what humans are. Strauss rejects this agnosticism.</td>
+<td>Thiel frames Strauss as directly opposing Locke on this point: "Strauss believes that there exists a truth about human nature, and that this truth can in principle be known to humanity." Where Locke's unknowability was a feature (it prevents anyone from imposing a single vision of the good life), Strauss treats it as a catastrophic loss -- the modern relativism and nihilism that leave the West unable to defend itself. The esoteric tradition is evidence that the truth was always known, merely hidden.</td>
+</tr>
+<tr>
+<td>The katechon / "hastener against its will"</td>
+<td>The katechon (from 2 Thessalonians) is the restraining force that holds back apocalyptic dissolution. The "hastener" (<em>Beschleuniger</em>) is its opposite: the force that, intentionally or not, accelerates the arrival of the end.</td>
+<td>Thiel's most devastating judgment on the Straussian project. Strauss intends to be the katechon -- to fortify the West by recovering knowledge of political realities that Locke suppressed. But the self-awareness this recovery produces paradoxically disables the capacity for unreflective action that the defense of the city requires. The katechon becomes the hastener "against its will."</td>
+</tr>
+<tr>
+<td>Founding violence (Romulus and Remus / Cain and Abel)</td>
+<td>The convergence between the Roman myth of Rome's founding (Romulus murders Remus) and the Genesis account of the first city (Cain murders Abel and builds Enoch): both locate fratricide at the origin of civilization.</td>
+<td>Strauss uses this convergence to argue that political founding is inseparable from primal violence -- a truth the American self-understanding (via Thomas Paine's patriotic account of the Revolution) tries to suppress. Thiel follows Strauss in peeling back the patriotic narrative: America "owes her greatness not only to her habitual adherence to the principles of freedom and justice, but also to her occasional deviation from them." Even America, the most liberal regime, has founding violence (the Louisiana Purchase, the fate of Native Americans).</td>
+</tr>
+<tr>
+<td>"Sad exigencies" / the veil</td>
+<td>Strauss's phrase for the morally troubling actions that even decent societies must take in wartime -- including unlimited reprisals and the treatment of "subversive elements within society" -- which he urges should be "left covered with the veil with which they are justly covered."</td>
+<td>Thiel uses this to capture Strauss's middle position: unlike Locke, Strauss acknowledges that liberal principles will sometimes be violated out of necessity; unlike Schmitt, he does not celebrate this or build a politics around it. The "veil" is the Straussian answer -- know the truth but do not publicize it. The practical question the essay leaves hanging is whether a veil can hold once you have told everyone it is there.</td>
+</tr>
+<tr>
+<td>The parallel histories (official history vs. secret services)</td>
+<td>The idea, drawn from Roberto Calasso's <em>The Ruin of Kasch</em>, that the post-1945 world can be narrated in two irreconcilable ways: the conventional history of states, parties, and public institutions, and the hidden history of intelligence services -- "murders, traps, betrayals, assassinations, cover-ups, and weapons shipments."</td>
+<td>Thiel uses this to identify the practical domain where Straussian philosophy finds application. If the overt machinery of liberal democracy (checks and balances, public debate, the United Nations) is insufficient, then the covert world of intelligence -- "Echelon, the secret coordination of the world's intelligence services" -- is where the real work of maintaining global order takes place. This is the Straussian answer to the question of how to act: not through the visible republic, but through the invisible one.</td>
+</tr>
+<tr>
+<td>"Universally valid hierarchy of ends" vs. "no universally valid rules of action"</td>
+<td>Strauss's formulation for his middle position between moral absolutism and moral relativism: there exist permanent, knowable moral ends (the good, justice, the best regime), but the specific actions required to pursue them cannot be fixed in advance and must respond to circumstances, including what the enemy forces upon you.</td>
+<td>Thiel highlights this as Strauss's attempt to navigate "between the Scylla of 'absolutism' and the Charybdis of 'relativism.'" It is the philosophical foundation for the "sad exigencies" argument: because the right action depends on context, no limits on wartime conduct "can be defined in advance." This is Strauss's most uncomfortable teaching, and Thiel does not let it pass without noting its implications for civil liberties.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Paraphrase Test</h2>
+<p><strong>Try this:</strong> Restate the argument of Section 4 in 4-5 sentences of your own, without looking at the summary above. Then compare: Did you capture the impasse that Strauss responds to (Locke too naive, Schmitt too violent)? Did you get the esoteric/exoteric distinction and why it matters? Did you note the self-undermining paradox -- that recovering the permanent problems makes their resolution harder? Did you register the practical turn toward intelligence services and secret action? Did you catch that Thiel ultimately judges Strauss's path, too, as insufficient?</p>
+<hr />
+<h2>Open Questions</h2>
+<ol>
+<li>
+<p><strong>The self-referential problem of esoteric writing about esoteric writing.</strong> Strauss argues that dangerous truths must be veiled. Thiel is writing an essay that unveils Strauss's method of veiling. Is Thiel's essay itself esoteric -- and if so, what is its esoteric message? Is the very act of publicizing Strauss's method (in a 2007 essay for a general intellectual audience) an example of the "hastening" Thiel warns about?</p>
+</li>
+<li>
+<p><strong>The gap between "no universally valid rules of action" and political paralysis.</strong> Strauss says the right action in an extreme situation depends on what the enemy forces you to do, and that there are "no assignable limits to what might become just reprisals." But he also says these exigencies should remain veiled. Who, in practice, decides when the veil is lifted? If the answer is the intelligence services (Echelon), what checks exist on their judgment, given that Strauss has just argued that the constitutional machinery of checks and balances produces political paralysis?</p>
+</li>
+<li>
+<p><strong>Is the American exception real or rhetorical?</strong> Thiel follows Strauss in first presenting America as the possible exception to the rule that great societies require founding violence (via Thomas Paine), and then immediately retracting that exception (the Louisiana Purchase, the fate of Native Americans, "occasional deviation" from principles of freedom and justice). Is Strauss genuinely uncertain, or is this a deliberate esoteric maneuver -- presenting the patriotic account only to undermine it for the careful reader? What does this imply about the American self-understanding that the rest of the essay depends on?</p>
+</li>
+<li>
+<p><strong>The tension between Strauss and Schmitt on the katechon.</strong> For Schmitt, the katechon is a concrete political-theological actor (the sovereign, the empire, the Church) that restrains chaos through decisive action. For Strauss, the katechon seems to be philosophical knowledge itself -- awareness of the permanent problems. But Thiel argues that Strauss's philosophical katechon inadvertently accelerates what it seeks to prevent. Does this mean that for Thiel, no katechon is possible? If so, the essay's logic drives inexorably toward Girard (Section 5) and the apocalyptic conclusion -- is that the intended direction?</p>
+</li>
+<li>
+<p><strong>Intelligence services as the "decisive path."</strong> Thiel's suggestion that "Echelon, the secret coordination of the world's intelligence services" represents "the decisive path to a truly global pax Americana" is perhaps the most provocative practical claim in the essay. Is this meant seriously, esoterically, or as a kind of reductio ad absurdum of the Straussian position? If taken at face value, it implies that liberal democracy is a surface phenomenon and that the real governance of the world happens in the shadows -- a claim that most liberal critics would find not just wrong but dangerous. Thiel seems to anticipate this objection ("Liberal critics who disagree with the philosopher also tend to dislike the philosopher's politics") but dismisses it on the ground that "American liberalism is decisively incomplete." Is the incompleteness of liberalism sufficient to justify its wholesale circumvention?</p>
+</li>
+<li>
+<p><strong>What does Thiel mean by "No new Alexander is in sight"?</strong> The reference to Alexander the Great cutting the Gordian knot implies that the interlocking problems Strauss identifies (intellectual paralysis from self-knowledge, political paralysis from constitutional machinery) could in principle be resolved by a single decisive actor who simply cuts through the contradictions. But Thiel says no such figure exists. Is this a lament, a warning, or a relief? And does the Spengler quotation at the end of the section -- with its invocation of approaching Caesarism and the imperative to "do the necessary or nothing" -- suggest that Thiel thinks such a figure might eventually appear, or that the longing for one is itself part of the problem?</p>
+</li>
+</ol>
+      </div>
+    </section>
+    <section id="section-5">
+      <h1>Section 5: Rene Girard: The End of the City of Man</h1>
+
+      <div class="before-reading">
+        <h2>Before You Read</h2>
+        <h2>Backgrounder</h2>
+<h4>Rene Girard (1923-2015)</h4>
+<p>Rene Girard was a French-American literary critic, anthropologist, and philosopher who spent most of his academic career at Stanford University and was elected to the Academie francaise in 2005. He began as a literary scholar, noticing that the great novelists (Cervantes, Stendhal, Flaubert, Dostoevsky, Proust) all converge on the same insight: human desire is not autonomous but imitative. Characters do not spontaneously want things; they want what someone else wants, and the someone else -- the "model" or "mediator" -- is as important to understanding desire as the object itself. From this literary observation, Girard built an increasingly ambitious theory that extends from individual psychology to the origins of human culture, religion, and violence.</p>
+<p>Girard's work unfolds in three major phases, each building on the last:</p>
+<ol>
+<li>
+<p><strong>Mimetic desire</strong> (developed in <em>Deceit, Desire, and the Novel</em>, 1961): All human desire is mediated -- we learn what to want by imitating others. This is not a pathology but the basic mechanism by which humans acquire language, culture, and identity. However, when two people imitate each other's desires, they inevitably converge on the same objects, producing rivalry. The imitator and the model become "mimetic doubles," locked in escalating competition that neither can escape because each is simultaneously model and imitator for the other.</p>
+</li>
+<li>
+<p><strong>The scapegoat mechanism</strong> (developed in <em>Violence and the Sacred</em>, 1972, and <em>Things Hidden Since the Foundation of the World</em>, 1978): When mimetic rivalry spreads through a community, it threatens to destroy the social order entirely -- a war of all against all. Archaic societies resolved this crisis through a spontaneous, unconscious mechanism: the violence of all against all converges into the violence of all against one. A single victim -- the scapegoat -- is collectively murdered, and this act of unanimous violence produces a sudden, dramatic restoration of peace. The community, astonished by the transition from chaos to order, concludes that the victim must have been extraordinary -- both the cause of the crisis and the source of its resolution. The murdered scapegoat is thereby divinized: myth is the retelling of the founding murder from the perspective of the persecuting community, which genuinely believes in the guilt of the victim. Religious ritual is the controlled repetition of the founding violence through sacrifice. All human institutions -- kingship, law, religion, even language -- trace back to this originary scene.</p>
+</li>
+<li>
+<p><strong>The Judeo-Christian revelation</strong> (developed across <em>Things Hidden</em> and subsequent works): The Bible is unique among the world's religious texts because it progressively takes the side of the victim rather than the persecuting community. From the story of Cain and Abel, through the Psalms of the innocent sufferer, to the Passion of Christ, the biblical text systematically unveils the innocence of the scapegoat and the lie of sacred violence. The crucifixion is the definitive revelation: an innocent man is killed by a unanimous mob, and the text makes this innocence unmistakable. This revelation is what Girard means by the "things hidden since the foundation of the world" (Matthew 13:35) -- the founding murder that all previous mythologies concealed. Christianity does not introduce a new myth; it destroys the mythical mechanism itself. But this destruction is double-edged: the scapegoat mechanism worked precisely because no one understood it. Once the innocence of the victim is known, sacred violence can no longer restore social order. Modernity -- with its concern for victims' rights, its suspicion of collective violence, its abolition of sacrifice -- is the cultural consequence of this revelation. But modernity has no replacement for the mechanism it has dismantled.</p>
+</li>
+</ol>
+<h4>Things Hidden Since the Foundation of the World (1978)</h4>
+<p>Girard's most ambitious and systematic work, structured as a dialogue with two psychiatrists (Jean-Michel Oughourlian and Guy Lefort). The title comes from Matthew 13:35: "I will utter things hidden since the foundation of the world." Girard reads this as Christ's announcement that the founding murder -- the secret origin of all human culture -- will now be exposed. The book develops the full arc of Girard's theory: from mimetic desire through the scapegoat mechanism to the Christian revelation and its consequences for modernity. It is the primary source for the claims Thiel attributes to Girard in this section.</p>
+<h4>Apocalypse: Original Meaning</h4>
+<p>The Greek word <em>apokalypsis</em> means "unveiling" or "uncovering" -- the removal of a veil that has concealed something. In Girard's usage, the apocalypse is not primarily a future catastrophe but the ongoing process by which the truth of human violence is being revealed. The connection between unveiling and catastrophe is precisely Girard's point: it is the unveiling itself that is catastrophic, because human culture depended on not knowing the truth about its own violent foundations. The apocalypse is dangerous not because God intervenes destructively but because humanity, deprived of its sacrificial safety valve, faces the prospect of unlimited violence with no mechanism for containing it.</p>
+<h4>How This Connects to the Essay's Structure</h4>
+<p>Girard occupies a unique position in Thiel's essay. Each of the four thinkers examined (Locke, Schmitt, Strauss, Girard) represents a different response to the crisis of modernity, and Thiel presents them in an order of increasing depth and radicalism:</p>
+<ul>
+<li><strong>Locke</strong> (Section 2) represents the Enlightenment settlement: set aside questions of human nature, build on the "low but solid ground" of rights and commerce. But this framework cannot account for people who refuse its terms.</li>
+<li><strong>Schmitt</strong> (Section 3) represents the diagnosis of what the Enlightenment suppresses: the friend/enemy distinction and the irreducibility of the political. But his prescription -- re-politicize, fight -- either destroys liberal identity or ends in the Antichrist's comfortable nihilism.</li>
+<li><strong>Strauss</strong> (Section 4) represents the attempt to recover the permanent questions through philosophical elitism and esoteric writing. But awareness of the city's problematic foundations makes unreflective civic defense impossible.</li>
+<li><strong>Girard</strong> (Section 5) represents the deepest account of what lies beneath all of these: the founding murder, the scapegoat mechanism, and its progressive unraveling. Girard subsumes and transcends the previous three thinkers. Locke's social contract is the "fundamental lie of the Enlightenment" -- a rationalized version of the founding murder. Schmitt's friend/enemy distinction is a symptom of the mimetic crisis, not its explanation. Strauss's esoteric concealment is a strategy for managing the dangerous truth, but Girard argues that this truth will inevitably become public knowledge.</li>
+</ul>
+<p>The essay's conclusion -- the figure of the "Christian statesman" who must side with peace in every close case -- follows directly from Girard's framework. If the scapegoat mechanism is unraveling and cannot be restored, then the only alternative to unlimited violence is a deliberate choice for peace that does not depend on ignorance or myth.</p>
+<p>Girard is, by Thiel's own account, the most important thinker in the essay. Thiel studied under Girard at Stanford and has repeatedly identified him as the thinker who most influenced his worldview. The section's placement at the essay's climax -- after Locke, Schmitt, and Strauss have each been examined and found wanting -- signals that Girard provides the framework within which the final conclusion becomes intelligible.</p>
+<hr />
+<h1></h1>
+      </div>
+
+      <div class="original-text">
+        <h2>The Text</h2>
+        <p class="pdf-info">Pages 21&ndash;27 of the original document (7 pages)</p>
+        <embed src="sections/section-5.pdf#toolbar=0&view=FitH" type="application/pdf"
+               width="100%" height="900px">
+      </div>
+
+      <div class="after-reading">
+        <h2>After You Read</h2>
+        <h2>Summary</h2>
+<p>Thiel presents Girard as the thinker who goes deepest -- beneath Locke's social contract, beneath Schmitt's friend/enemy distinction, beneath Strauss's philosophical esotericism -- to the hidden foundation of all human culture: the founding murder of the scapegoat. In Girard's account, human desire is fundamentally imitative (mimetic), and because mimetic rivalry has no natural limit in humans, archaic societies survived only through the unconscious mechanism of all-against-one violence, in which a single victim's death restored peace and order. Myth conceals this violence; religion ritualizes it; all political institutions rest upon it. But the Judeo-Christian revelation has progressively unveiled the innocence of the victim and thereby destroyed the mechanism's effectiveness, leaving modernity without any means of containing the violence it has exposed. This creates an apocalyptic situation -- not in the popular sense of future catastrophe, but in the original sense of an unveiling that is itself catastrophic -- in which neither the liberal's faith in human goodness nor the conservative's faith in sacred institutions can prevent the escalation of unbounded mimetic violence. The essay concludes that only a "Christian statesman" who understands both the inevitability of this unveiling and the necessity of choosing peace in every close case can navigate between the twin abysses of runaway mimesis and the false security of archaic violence.</p>
+<hr />
+<h3>Key Terms</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>How the author uses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mimesis / mimetic desire</td>
+<td>Girard's foundational concept: human desire is not autonomous or instinctual but imitative. We learn what to want by observing and copying the desires of others. Because desire is mediated through models, it naturally tends toward convergence -- multiple people wanting the same thing -- and therefore toward rivalry. Mimesis is also the mechanism by which all culture is transmitted (language acquisition, social learning), so it cannot be eliminated without eliminating humanity itself.</td>
+<td>Thiel presents mimesis as the post-Darwinian key to understanding human nature -- the concept that finally fills Locke's unknowable "X." Human beings are distinguished from other animals not by reason or language per se but by a "greater aptitude for imitation." This insight resolves the Darwin-Aristotle tension by showing both continuity with the animal world (other animals also imitate) and discontinuity (human imitation is qualitatively more powerful, extending into the realm of desire itself). Thiel emphasizes that mimesis is not inherently pathological -- it is what makes us human -- but that its extension into acquisitive desire produces escalating rivalry with no natural brake.</td>
+</tr>
+<tr>
+<td>The scapegoat mechanism</td>
+<td>The process by which archaic communities resolved mimetic crises: when rivalry between mimetic doubles threatened to escalate into unlimited violence (the war of all against all), the community's violence spontaneously converged onto a single victim. The unanimous murder of this victim produced a sudden restoration of peace, and the community, unable to understand its own mechanism, attributed both the crisis and the resolution to the extraordinary power of the victim.</td>
+<td>Thiel uses the scapegoat mechanism as Girard's alternative to the social contract. Where Hobbes and Locke imagined rational agents agreeing to form a political society, Girard argues that the actual origin of social order was a collective murder -- irrational, unconscious, and effective precisely because no one understood what was happening. The social contract is thus "the fundamental lie of the Enlightenment": not a contract at all, but a rationalized retelling of the founding murder. This reframing is essential to Thiel's argument because it means the Enlightenment's entire political framework rests on a misunderstanding of its own origins.</td>
+</tr>
+<tr>
+<td>Founding murder</td>
+<td>The original act of scapegoating violence that, in Girard's account, stands at the origin of every human culture, religion, and political institution. It is "remembered and transfigured in myth" but never accurately recalled, because its effectiveness depended on the community's sincere belief in the victim's guilt.</td>
+<td>Thiel makes the founding murder the hidden truth that all four thinkers in the essay are, in different ways, grappling with. Locke's social contract conceals it behind rational fiction. Schmitt's friend/enemy distinction perpetuates its logic. Strauss's esotericism protects society from knowing it. Only Girard names it directly. The section's central drama is the question of what happens when this concealment fails -- when the truth of the founding murder becomes general knowledge.</td>
+</tr>
+<tr>
+<td>Sacred violence vs. desacralized violence</td>
+<td>Sacred violence is the controlled, ritualized violence of archaic religion -- sacrifice, ritual combat, judicial execution -- that channels mimetic aggression into contained, socially productive forms by reenacting the founding murder. Desacralized violence is violence stripped of its mythical justification and ritual containment -- violence that serves no ordering function and therefore has no natural limit.</td>
+<td>Thiel frames the modern crisis as the passage from sacred to desacralized violence. The Judeo-Christian revelation has progressively delegitimized sacred violence (we no longer believe the scapegoat is guilty), but nothing has replaced it. The result is that "the unraveling of founding myths may deprive humanity of the limited and sacred violence it needed to protect itself from unlimited and desacralized violence." This is the core of the apocalyptic danger: not that violence increases in quantity, but that it loses the cultural mechanisms that once contained it.</td>
+</tr>
+<tr>
+<td>Apocalypse (original meaning: unveiling)</td>
+<td>From the Greek <em>apokalypsis</em>, meaning "uncovering" or "revelation." In Girard's usage, the apocalypse is not a future event of divine destruction but the ongoing process by which the truth of human violence -- the innocence of the victim, the lie of sacred violence, the founding murder -- is being progressively revealed. The catastrophic dimension follows from the unveiling itself: if social order depended on concealing the truth of its violent origins, then revealing that truth threatens to dissolve social order.</td>
+<td>Thiel uses the Girardian apocalypse to frame the entire post-9/11 situation. The modern world is apocalyptic not because of nuclear weapons per se but because the cultural mechanisms that once contained violence have been dismantled by the very knowledge that makes modernity possible. The "cat is out of the bag": we know the scapegoat is innocent, and we cannot unknow it. Terrorism -- "unbounded, apocalyptic violence" -- is the symptom of a world in which sacred violence no longer functions but unlimited mimetic rivalry persists.</td>
+</tr>
+<tr>
+<td>The "liberal" and "conservative" (Girard's definitions)</td>
+<td>Thiel, drawing on Girard, redefines these terms in relation to knowledge of violence. A "liberal" is someone who "knows nothing of the past and of this history of violence" and retains the Enlightenment belief in natural human goodness. A "conservative" is someone who "knows nothing of the future and of the global world that is destined to be" and still trusts that institutions rooted in sacred violence (the nation-state, traditional religion) can contain human aggression.</td>
+<td>Thiel uses these definitions to show that both conventional positions are fatally incomplete. The liberal is blind to the violent origins of human culture and therefore cannot understand or respond to threats that arise from mimetic rivalry. The conservative is blind to the irreversible unraveling of sacred violence and therefore places faith in institutions whose mythical foundations have already been exposed. "The present risks a terrible synthesis of the blind spots" -- violence and globalization with all boundaries abolished. Neither liberal optimism nor conservative nostalgia addresses the actual situation.</td>
+</tr>
+<tr>
+<td>The Christian statesman</td>
+<td>The figure Thiel introduces in the essay's conclusion as the only viable response to the Girardian crisis. The Christian statesman understands, with Girard, that the modern age will not be permanent, that "all will be revealed, all injustices exposed." Unlike Strauss, the Christian statesman does not believe that esoteric concealment can indefinitely manage the dangerous truth. Unlike Schmitt, the Christian statesman does not seek to restore the friend/enemy distinction or revive sacred violence. Unlike the liberal, the Christian statesman does not pretend that violence can be wished away.</td>
+<td>Thiel presents the Christian statesman as the essay's final answer -- not a triumphant synthesis but a sober recognition that "in every close case, the wise course is to side with peace." The figure is defined negatively (no return to archaic violence, no accommodation with the Enlightenment, no retreat into biblical study) and positively only in terms of a disposition: siding with peace in close cases. The modesty of this prescription -- cumulative prudential judgment rather than a grand theory -- reflects the depth of the crisis Girard has diagnosed. There is no institutional solution, only a series of individual decisions whose aggregate will determine "the limitless violence of runaway mimesis or the peace of the kingdom of God."</td>
+</tr>
+<tr>
+<td>"Things hidden since the foundation of the world"</td>
+<td>The phrase comes from Matthew 13:35 (quoting Psalm 78:2) and serves as the title of Girard's major work. In context, Jesus says he speaks in parables to reveal "things hidden since the foundation of the world." Girard reads this as Christ's announcement that the founding murder -- the secret on which all human culture rests -- will now be brought to light.</td>
+<td>Thiel uses this phrase to name the content of the Girardian revelation: the truth that all human culture originates in collective violence against an innocent victim, and that this truth, once known, cannot be re-concealed. The phrase connects the biblical text to the anthropological theory: what was "hidden" was not a theological abstraction but the concrete historical reality of the scapegoat mechanism. Its revelation is both liberating (it frees us from the lie of sacred violence) and dangerous (it deprives us of the mechanism that contained violence). The double edge of this revelation is the engine of the entire section.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Paraphrase Test</h3>
+<p><strong>Try this:</strong> Restate the argument of this section in 4-5 sentences of your own. Then compare with the summary above -- what did you capture? What did you miss?</p>
+<p>Things to watch for when comparing:</p>
+<ul>
+<li>
+<p>Did you capture <strong>Girard's alternative to the social contract</strong>? The central move is replacing Hobbes's and Locke's "rational agreement" with the founding murder -- the war of all against all does not end in a contract but in a scapegoat. If you summarized Girard's theory without this specific contrast, you missed the polemical point.</p>
+</li>
+<li>
+<p>Did you capture the <strong>double-edged nature of the Christian revelation</strong>? The key Girardian insight is not merely that the scapegoat mechanism exists but that the Bible reveals its injustice, and this revelation is simultaneously a moral advance (we know the victim is innocent) and a civilizational danger (we can no longer use the mechanism to contain violence). If you described the revelation as purely positive or purely negative, you missed the dialectic.</p>
+</li>
+<li>
+<p>Did you register <strong>what Girard adds beyond Schmitt and Strauss</strong>? Schmitt diagnosed the persistence of violence; Strauss diagnosed the need for esoteric concealment. Girard explains <em>why</em> violence persists (mimetic desire) and <em>why</em> concealment is failing (the Judeo-Christian revelation is systematically unveiling the founding murder). If your paraphrase could apply equally to any of the three thinkers, it is not specific enough to Girard.</p>
+</li>
+<li>
+<p>Did you capture the <strong>redefinition of "liberal" and "conservative"</strong>? Thiel uses Girard to show that both conventional positions are half-blind -- the liberal to the violent past, the conservative to the irreversible future. This is not a centrist "both sides" argument; it is a claim that neither side understands the depth of the crisis. If you omitted this, you missed one of the section's most striking rhetorical moves.</p>
+</li>
+<li>
+<p>Did you capture the <strong>conclusion about the Christian statesman</strong>? The essay does not end with diagnosis but with a (modest) prescription: side with peace in every close case. If your paraphrase ended with the apocalyptic crisis and omitted the response, you missed the essay's resolution -- however tentative it is.</p>
+</li>
+<li>
+<p>Did you notice the <strong>temporal argument</strong> between Strauss and Girard? Thiel frames their disagreement as a question of timing: Strauss believes the dangerous truth can remain esoteric indefinitely; Girard believes it will inevitably become public knowledge. This is not a minor point -- it determines whether the Straussian strategy of philosophical elitism is viable or merely a delaying tactic.</p>
+</li>
+</ul>
+<hr />
+<h3>Open Questions</h3>
+<ul>
+<li>
+<p><strong>Is the founding murder an empirical hypothesis or a structural claim?</strong> Girard presents the scapegoat mechanism as the actual historical origin of human culture, not merely as a useful metaphor or interpretive lens. But what kind of evidence could confirm or disconfirm this? Girard's evidence is primarily textual (myths, rituals, biblical narratives), not archaeological or paleontological. Can a theory about events in deep prehistory -- before writing, before recorded history -- ever be more than a plausible reconstruction? And does the theory's persuasiveness depend on its literal historical truth, or would it retain its explanatory power even as a structural account of how human societies manage violence?</p>
+</li>
+<li>
+<p><strong>Does Girard's framework actually subsume Schmitt and Strauss, or does Thiel's presentation impose a false hierarchy?</strong> Thiel places Girard last and presents him as going deepest, but one could argue that Schmitt's friend/enemy distinction captures something about political life that mimetic theory does not fully explain -- namely, the role of genuine ideological or existential difference, as opposed to mere mimetic convergence. Similarly, Strauss's concern with the tension between philosophy and the city may be irreducible to the question of sacred violence. Does Girard's theory really explain <em>everything</em>, or does its comprehensiveness come at the cost of flattening important distinctions?</p>
+</li>
+<li>
+<p><strong>What does Thiel mean by "siding with peace in every close case"?</strong> The prescription is deliberately vague. What counts as a "close case"? Is the decision to go to war in Afghanistan a close case? The decision to invade Iraq? The decision to surveil citizens? The decision to restrict immigration? Without criteria for identifying close cases or for distinguishing them from clear cases, the prescription risks being either vacuous (always choose peace, which is naive) or question-begging (choose peace except when you should not, which says nothing). Is this vagueness a feature -- leaving room for prudential judgment -- or a deficiency?</p>
+</li>
+<li>
+<p><strong>Why does Thiel invoke the "Christian" statesman rather than simply a "Girardian" statesman?</strong> The distinction matters. A Girardian statesman would act on the basis of anthropological knowledge -- understanding mimetic theory and the scapegoat mechanism as social-scientific insights. A Christian statesman acts on the basis of faith -- believing that "the modern age will not be permanent, that all will be revealed." Thiel seems to require the faith dimension, not just the intellectual framework. But why? Is it because the knowledge alone is insufficient to motivate the choice for peace? Because without eschatological hope (the "kingdom of God"), the rational response to the unraveling of sacred violence might be despair or cynicism rather than peacemaking? This question goes to the heart of whether Girard's theory is ultimately a secular anthropology with Christian trappings or a genuinely theological claim that cannot be separated from its religious content.</p>
+</li>
+<li>
+<p><strong>Does the mimetic theory of nuclear proliferation hold up?</strong> Thiel, following Girard, suggests that nations acquire nuclear weapons not only for deterrence or security but for "the mimetic prestige they confer." This is a striking claim. It implies that nuclear proliferation is driven in part by the same mechanism that drives consumer competition -- keeping up with the Joneses, but with warheads. Is there evidence for this? Cases like India and Pakistan, or North Korea, seem to involve a complex mix of security concerns, national prestige, and domestic politics. Does calling the prestige dimension "mimetic" add explanatory power, or is it merely relabeling a familiar phenomenon (status competition among states) in Girardian vocabulary?</p>
+</li>
+<li>
+<p><strong>How does Thiel's Girardian framework relate to his own activities as a technology investor and defense contractor?</strong> Thiel co-founded PayPal (a financial technology company), was an early investor in Facebook (a platform that arguably amplifies mimetic desire to an unprecedented degree), and co-founded Palantir (a surveillance and intelligence company working closely with the U.S. national security apparatus). Each of these enterprises intersects with the Girardian analysis in uncomfortable ways. Facebook makes mimetic rivalry visible and scalable. Palantir operationalizes the state's capacity for violence and surveillance. PayPal extends the Lockean commercial order Girard critiques. Does Thiel see these activities as consistent with the Christian statesman's vocation, or as compromises with a system he knows to be doomed? The essay does not address this tension, but it shadows the text.</p>
+</li>
+</ul>
+      </div>
+    </section>
+
+  <footer>
+    Layered Lenses Deep Reading Framework &mdash; Pass 1: Comprehension
+  </footer>
+</body>
+</html>
